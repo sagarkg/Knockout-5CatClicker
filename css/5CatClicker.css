@@ -1,3 +1,8 @@
+h2{
+	margin:0;
+	padding: 0;
+}
+
 #container1{
 			float: left;
 			width: 100px;
@@ -19,7 +24,7 @@
 			height: 300px;
 			width: 50px;
 		}
-ul {
+#container1 ul {
 	padding:0;
 	margin:0;
 	list-style: none;
@@ -43,7 +48,8 @@ ul {
 	margin-left: 5px;
 }
 
-li {
+
+#container1 li {
 	border: 1px solid black;
 	margin: 5px 0 5px 0;
 	background: lightGrey;
