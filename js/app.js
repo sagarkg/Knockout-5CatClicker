@@ -104,15 +104,20 @@ var ViewModel = function(){
 	self.setCurrentCat = function(obj, event){
 		
 		self.currentCat(obj);
+		self.updateAdminView();	
 		
 	};
 
-	
-	self.toggleAdminView = function(){
-		self.adminVisibleFlag(!self.adminVisibleFlag());
+	self.updateAdminView = function(){
 		self.tmpName(self.currentCat().name());
 		self.tmpImage(self.currentCat().image());
 		self.tmpCount(self.currentCat().count());
+
+	}
+	
+	self.toggleAdminView = function(){
+		self.adminVisibleFlag(!self.adminVisibleFlag());
+		self.updateAdminView();	
 
 	};
 
