@@ -7,8 +7,9 @@
 
 	<title>Cat Clicker</title>
 	
-	<link rel="stylesheet" type="text/css" href="css/5CatClicker.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/5CatClicker.css">
+	
 
 </head>
 <body>
@@ -22,25 +23,54 @@
 	<div class="separation"></div>
 
 	<div id="container2" class="container" data-bind="with:currentCat()">
-		<h2 data-bind="text: name"></h2>
-		<div data-bind="text: count"></div>
-		<h3 data-bind="text: catLevel"></h3>
+		<h4>Name: <span data-bind="text: name"></span></h4>
 		<br/>
-		<img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: image}"/>
+		<div>
+			<div id="countDiv">No. of Clicks: <span data-bind="text: count"></span></div>
+			<p id="catLevelDiv"> <span data-bind="text: catLevel"></span></p>
+		</div>	
+
+		<img id="catPic" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: image}"/>
 		
 		<br/>
 
 		<div>
-			<h4>NickNames:</h4>
+			<h5>NickNames:</h5>
 			
 			<ul data-bind="foreach: petNames">
 				<li>
 				<span data-bind="text: $data"></span>
 				</li>
 			</ul>	
-		<div>	
+		</div>
+	</div>	
 
-	</div>
+	<div class="separation"></div>
+	
+	<div class="container">
+		<button type="button" data-bind="click: toggleAdminView">Admin Panel</button>
+		<br/><br/>
+		
+		<div id="admin_area" data-bind="visible: adminVisibleFlag">
+			<form class="admin">
+				<label for="cat_name">Name: </label>
+				<input type="text" id="admin_cat_name" name="cat_name"/>
+				<br/><br/>
+				<label for="path">Path/Link: </label>
+				<input type="text" id="admin_path" name="path"/>
+				<br/><br/>
+				<label for="path">Click Count: </label>
+				<input type="number" id="admin_count" min="0" name="count"/>
+				<br/><br/>
+
+				<button type="button" id="cancel">Cancel</button>
+				<button type="button" id="save">Save</button>
+			</form>
+		
+		</div>
+
+	</div>	
+
 	
 
 	<script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>

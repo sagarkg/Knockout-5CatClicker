@@ -97,8 +97,14 @@ var ViewModel = function(){
 		
 	};
 
-	
+	//AdminView Toggling
+	self.adminVisibleFlag = ko.observable(false);
 
-}
+	self.toggleAdminView = function(){
+		self.adminVisibleFlag(!self.adminVisibleFlag());
+		
+	};
+
+};
 
 ko.applyBindings(new ViewModel());

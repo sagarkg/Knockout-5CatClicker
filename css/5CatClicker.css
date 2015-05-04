@@ -1,29 +1,16 @@
-h2{
+p,h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding: 0;
 }
 
 #container1{
-			float: left;
-			width: 100px;
 			
-		}
-
-.container{
-			float: left;
-			
-		}
+	width: 100px;
+	float: left;
 		
-#catPic {
-			height: 450px;
-			width: 450px;
-		}
+}
 
-.separation {
-			float: left;
-			height: 300px;
-			width: 50px;
-		}
+
 #container1 ul {
 	padding:0;
 	margin:0;
@@ -31,10 +18,50 @@ h2{
 	display: block;
 }
 
-#admin_area {
-	display:none;
+#container1 li {
+	border: 1px solid black;
+	margin: 5px 0 5px 0;
+	background: lightGrey;
+	border-radius: 3px;
 }
 
+#container2{
+
+	display: block;
+	float: left;
+}
+
+#countDiv{
+	float: left;
+	width: 50%;
+}
+
+#catLevelDiv {
+	float: left;
+	width: 50%;
+	
+}
+		
+#catPic {
+	height: 450px;
+	width: 450px;
+}
+
+.separation {
+	float: left;
+	height: 100%;
+	width: 50px;
+}
+
+
+#container3{
+	float: left;
+	display: block;
+}
+
+#admin_area {
+	float: left;
+}
 
 .admin label{
 	display: block;
@@ -49,9 +76,3 @@ h2{
 }
 
 
-#container1 li {
-	border: 1px solid black;
-	margin: 5px 0 5px 0;
-	background: lightGrey;
-	border-radius: 3px;
-}
