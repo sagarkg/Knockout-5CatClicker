@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<div id="container1" class="container">
+	<div id="container1">
 		<ul data-bind="foreach: catList">
 			<li data-bind="text: $data.name, click: $parent.setCurrentCat"></li>
 		</ul>
@@ -22,7 +22,7 @@
 	
 	<div class="separation"></div>
 
-	<div id="container2" class="container" data-bind="with:currentCat()">
+	<div id="container2" data-bind="with:currentCat()">
 		<h4>Name: <span data-bind="text: name"></span></h4>
 		<br/>
 		<div>
@@ -47,24 +47,27 @@
 
 	<div class="separation"></div>
 	
-	<div class="container">
+	<div id="container3">
 		<button type="button" data-bind="click: toggleAdminView">Admin Panel</button>
 		<br/><br/>
 		
 		<div id="admin_area" data-bind="visible: adminVisibleFlag">
-			<form class="admin">
+			<form class="admin" data-bind="with: currentCat()">
 				<label for="cat_name">Name: </label>
-				<input type="text" id="admin_cat_name" name="cat_name"/>
-				<br/><br/>
+				<!--Input for cat Name-->
+				<input type="text" data-bind="value: $parent.tmpName"/> 
+				<br/><br/>	
 				<label for="path">Path/Link: </label>
-				<input type="text" id="admin_path" name="path"/>
+				<!--Input for cat image path-->
+				<input type="text" data-bind="value: $parent.tmpImage"/>
 				<br/><br/>
 				<label for="path">Click Count: </label>
-				<input type="number" id="admin_count" min="0" name="count"/>
+				<!--Input for cat count-->
+				<input type="number" min="0" data-bind="value: $parent.tmpCount"/>
 				<br/><br/>
 
-				<button type="button" id="cancel">Cancel</button>
-				<button type="button" id="save">Save</button>
+				<button type="button" data-bind="click: $parent.toggleAdminView">Cancel</button>
+				<button type="button" data-bind="click: $parent.applyCatUpdates">Save</button>
 			</form>
 		
 		</div>
